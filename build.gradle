@@ -1,0 +1,31 @@
+plugins {
+    id 'scala'
+    id 'application'
+    id 'org.springframework.boot' version '2.5.0'  // Intentionally using an older version
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+group 'com.todoapp'
+version '1.0-RELEASE'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.scala-lang:scala-library:2.13.6'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.0'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.0'
+    implementation 'com.h2database:h2:1.4.200'  // Using H2 database for simplicity
+    implementation 'org.postgresql:postgresql:42.2.20'  // Intentionally older version
+    implementation 'com.fasterxml.jackson.module:jackson-module-scala_2.13:2.12.3'
+    
+    testImplementation 'org.scalatest:scalatest_2.13:3.2.9'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+application {
+    mainClass = 'com.todoapp.TodoApplication'
+}
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
